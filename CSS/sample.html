@@ -21,17 +21,28 @@
             display: flex;
 
         }
+        /* Modified with hover */
 
         .nav li {
             margin-right: 25px;
-            color: crimson;
+            color: #8d0000;
+            ;
             font-style: italic;
+            background: rgb(47, 44, 218);
+
+            transition: 100ms;
+  &:hover {
+    background: var(--custom_color);
+
 
 
         }
+    }
+        
 
         .nav li a {
             text-decoration: none;
+
 
         }
     </style>
@@ -49,7 +60,7 @@
     <h5>First Styling Sheet</h5>
     <!-- Nav bar -->
     <nav>
-        <ul class="nav">
+        <ul class="nav" style="--custom_color: pink">
             <li a href="#home.html">Home</li>
             <li a href="#about.html">About</li>
             <li a href="#services.html">Services</li>
@@ -69,8 +80,8 @@
             Welcome</p>
     </div>
     <!-- to display in same line -->
-     <p>Welcome</p>
-     css
+    <p>Welcome</p>
+    css
     <p style="display: inline;">Welcome</p>
 
     <div style="background-color: aqua;">
@@ -81,7 +92,7 @@
 
     </div>
 
-    
+
 </body>
 
 </html>
