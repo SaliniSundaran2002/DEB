@@ -1,11 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <style>
+        /* Inline styling */
+        /* styling for h5 tag */
+        h5 {
+            font-family: 'Times New Roman', Times, serif;
+            text-decoration: line-through;
+            color: rgb(132, 0, 255);
+            /* background-color: rgb(195, 141, 245); */
+            text-align: right;
+            font-size: larger;
+        }
+
+        .nav {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+
+        }
+
+        .nav li {
+            margin-right: 25px;
+            color: crimson;
+            font-style: italic;
+
+
+        }
+
+        .nav li a {
+            text-decoration: none;
+
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sample Styling Page</title>
 </head>
+
 <body>
-    <h1 style="background-color: blueviolet;">Hello World</h1>
+    <!-- embeded styling  -->
+    <p
+        style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;color: #8d0000;font-style: italic; text-align: center; text-decoration: underline; background-color: rgb(255, 143, 143);">
+        Welcome</p>
+
+    <h5>First Styling Sheet</h5>
+    <!-- Nav bar -->
+    <nav>
+        <ul class="nav">
+            <li a href="#home.html">Home</li>
+            <li a href="#about.html">About</li>
+            <li a href="#services.html">Services</li>
+            <li a href="#contact.html">Contact</li>
+        </ul>
+
+    </nav>
+    <div>
+        <p
+            style="color: #8d0000; background-color: #ff8787; text-decoration: underline; text-align: center; font-size: larger;">
+            WELCOME TO CSS</p>
+    </div>
+
+    <div>
+        <p
+            style="color: black; background-color: rgb(138, 120, 120); text-decoration: line-through;text-align: right; font-size: larger;">
+            Welcome</p>
+    </div>
+    <!-- to display in same line -->
+     <p>Welcome</p>
+     css
+    <p style="display: inline;">Welcome</p>
+
+    <div style="background-color: aqua;">
+        Hello
+        <p style="color: #8d0000; text-decoration: line-through; display: inline;">How</p>
+        <p style="color: #8d0000;text-decoration: line-through;">Are</p>
+        <p>You?</p>
+
+    </div>
+
+    
 </body>
+
 </html>

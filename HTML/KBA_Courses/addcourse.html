@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Course</title>
+</head>
+
+<body bgcolor="#fae5d3 ">
+    <img src="/kba_logo.webp" width="60" height="60" alt="kba_logo">
+
+    <a href="home.html">Home|</a>
+    <a href="learnmore.html">Courses|</a>
+    <a href="contactus.html">Contact Us|</a>
+    <a href="addcourse.html">Add Course|</a>
+    <a href="Logout">Logout</a><br><br><br><br>
+
+
+    <h1>Add Course</h1>
+    <form>
+        <table align="center" cellspacing="15">
+            <tr>
+                <td>Course Name : </td>
+                <td><input type="text" placeholder="Enter the course name" required></td>
+            </tr>
+            <tr>
+                <td>Course Id : </td>
+                <td><input type="text" placeholder="Enter the course id" required></td>
+            </tr>
+            <tr>
+                <td>Course Type : </td>
+                <td>
+                    <select name="Course" required>
+                        <option value="select">---select---</option>
+                        <option value="course1">Course 1</option>
+                        <option value="course2">Course 2</option>
+                        <option value="course3">Course 3</option>
+                        <option value="course4">Course 4</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Description : </td>
+                <td><textarea cols="21" rows="5" name="description" placeholder="Enter the description" required></textarea></td>
+            </tr>
+            <tr>
+                <td>Price : </td>
+                <td>
+                    <select name="price" required>
+                        <option value="select">---select---</option>
+                        <option value="price1">15000</option>
+                        <option value="price2">20000</option>
+                        <option value="price3">30000</option>
+                        <option value="price4">40000</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Add Course">
+                <input type="reset" value="Reset"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
