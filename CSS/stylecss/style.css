@@ -1,0 +1,8 @@
+.column{
+    float: left;
+    width: 32%;
+    height: 480px;
+    border-left: 2px solid rgb(128, 0, 0);
+    /* Activity */
+    padding-left:20px;
+}
