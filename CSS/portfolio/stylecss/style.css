@@ -1,0 +1,40 @@
+.bg{
+     height: 2000px;
+  background-color: red;
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 255, 242));
+}
+
+.h2{
+    font-size: 25px;
+    color: beige;
+    text-align: left;
+    text-decoration: none;
+    font-family: fantasy;
+    transition: .3s;
+
+}
+
+
+.topnav{
+    text-align: right;
+    
+}
+
+.topnav a{
+
+    color: beige;
+    text-align: right;
+    text-decoration: none;
+    padding: 15px;
+    font-size: 20px;
+    font-family: fantasy;
+    /* margin-top: 40px; */
+    transition: .3s;
+    
+
+}
+
+.topnav a:hover{
+    color: rgb(0, 255, 242);
+    /* border-radius: 5px; */
+}
