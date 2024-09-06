@@ -6,3 +6,23 @@
     /* Activity */
     padding-left:20px;
 }
+
+/* Apply Responsive */
+
+@media only screen and (max-width:600px){
+    .column{
+        width: 100%;
+    }
+    .tp{
+        font-size: medium;
+        /* padding-bottom: 60px; */
+        /* margin: auto; */
+        padding: auto;
+    }
+
+    .timg{
+        width: 300px;
+        height: 200px;
+    }
+
+}
