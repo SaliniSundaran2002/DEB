@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <link rel="stylesheet" href="stylecss/style.css"> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Certificate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-purple-200">
+    <!-- <div class="text-right">
+        <a class="pr-4" href="frontpage.html">Home</a>
+        <a href="issuecertificate.html" class="pr-4">Issue Certificate</a>
+    </div> -->
+
+    <div class="text-right">
+        <button type="submit" class="hover:bg-sky-500 pr-14 w-6 h-10 justify-center "><a
+                href="frontpage.html">Home</a></button>
+        <button type="submit" class="hover:bg-sky-500 pr-40 w-24 h-10 justify-center "><a href="issuecertificate.html"
+                class="w-32 text-center">IssueCertificate</a></button>
+    </div>
+    <h2 class="text-2xl mt-10">Certificate Dapp</h2>
+
+
+    <div class="border bg-white p-8 m-auto w-1/2 mt-8 border-black">
+        <h3 class="text-center text-xl">Issue New Certificate</h3>
+        <div class="mt-2">
+            <label>Select Course <sup>*</sup></label><br>
+            <select required class="mt-6 w-5/6 h-10 border border-black">
+                <option value="1">Certified Blockchain Associate</option>
+                <option value="2">Certified Cyber Security</option>
+                <option value="3">Certified Blockchain Associate3</option>
+            </select>
+        </div>
+        <div class="mt-2">
+        <label class="mt-6">Certificate ID<sup>*</sup></label><br>
+        <input type="text" placeholder="Certificate ID" required class="mt-4 w-5/6 h-10 border border-black">
+        </div>
+        <div class="mt-2">
+        <label>Candidate Name</label><br>
+        <input type="text" placeholder="Name" required class="w-5/6 h-10 border border-black mt-6">
+        </div>
+        <div class="mt-2">
+        <label>Select Grade<sup>*</sup></label><br>
+        <select required class="w-5/6 h-10 border border-black mt-4">
+            <option value="select">---select---</option>
+            <option value="1">S</option>
+            <option value="2">A</option>
+            <option value="3">A+</option>
+        </select>
+        </div>
+        <div class="mt-2">
+        <label>Issue Date<sup>*</sup></label><br>
+        <input type="date" required class="w-5/6 h-10 border border-black mt-6"></div>
+        <!-- <input type="submit" value="Issue Certificate"> -->
+         <div class="mt-2">
+        <button type="submit" class="mt-4 border-2 w-32 h-12 bg-sky-500">Issue Certificate</button>
+        </div>
+
+
+
+    </div>
+
+</body>
+
+</html>
