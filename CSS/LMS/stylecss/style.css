@@ -1,0 +1,414 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('/HTML/LibraryManagement/Images/pexels-element5-1370295.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 2rem;
+    color: black;
+}
+
+header h1 span {
+    color: #1d62db;
+}
+
+header nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.main-content {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.main-content h2 {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.main-content h2 span {
+    color: #1d62db;
+}
+
+.main-content p {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.login-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+.login-box h3 {
+    color: #1d62db;
+    margin-bottom: 20px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: #1d62db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.login-box a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #1d62db;
+    font-size: 0.9rem;
+}
+
+ */
+
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.body-home {
+    background-image: url('/HTML/LibraryManagement/Images/pexels-cottonbro-6344231.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.header {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header h1 {
+    font-size: 2rem;
+    color: black;
+}
+
+.header h1 span {
+    color: #1d62db;
+}
+
+.header nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.main-content {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.main-content h2 {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.main-content h2 span {
+    color: #1d62db;
+}
+
+.main-content p {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.login-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 550px;
+}
+
+.login-box h3 {
+    color: #1d62db;
+    margin-bottom: 20px;
+}
+
+.login-box p {
+    color: #db1d1d;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: #1d62db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.lbtn{
+    color: white;
+}
+
+.login-box a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #1d62db;
+    font-size: 0.9rem;
+}
+
+
+/* about */
+
+.about-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 550px;
+    height: 500px;
+}
+
+.about-box p{
+    color: black;
+    
+}
+
+.body-about {
+    background-image: url('/HTML/LibraryManagement//Images/pexels-element5-1370295.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+/* Add book */
+
+.body-addbook {
+    background-image: url('/HTML/LibraryManagement//Images/pexels-olgalioncat-7244576.jpg');
+    background-position: center;
+}
+
+.login-box select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.abtn{
+    color: white;
+    background: #1d62db;
+}
+
+/* View Books */
+
+.body-viewbooks {
+    background-image: url('/HTML/LibraryManagement//Images/pexels-pixabay-256541.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.v-box img{
+    width:260px;
+}
+
+
+.v-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    /* margin-left: 150px; */
+}
+
+.v-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 550px;
+}
+
+.v-box p{
+   color:#1d62db
+}
+
+/* signup */
+
+.body-signup {
+    background-image: url('/HTML/LibraryManagement//Images/pexels-pixabay-256541.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.s-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    /* margin-left: 150px; */
+}
+
+.s-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 550px;
+}
+
+.s-box h3 {
+    color: #1d62db;
+    margin-bottom: 20px;
+}
+
+.s-box p {
+    color: #db1d1d;
+    margin: 20px;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.s-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.s-box button {
+    width: 100%;
+    padding: 10px;
+    background-color:#1d62db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+.s-box a{
+    text-decoration: none;
+    margin: 20px;
+}
+
+/* Login */
+
+.body-login {
+    background-image: url('/HTML/LibraryManagement/Images/pexels-pixabay-207662.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.l-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    /* margin-left: 150px; */
+}
+
+.l-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 550px;
+}
+
+.l-box h3 {
+    color: #1d62db;
+    margin-bottom: 20px;
+}
+
+.l-box p {
+    color: #db1d1d;
+    margin: 20px;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.l-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.s-box button {
+    width: 100%;
+    padding: 10px;
+    background-color:#1d62db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+.l-box a{
+    text-decoration: none;
+    margin: 20px;
+}
