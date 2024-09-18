@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>YouTube Home Page</title>
+</head>
+
+<body class="bg-gray-100 dark:bg-slate-950">
+    <!-- Header -->
+    <div class="flex items-center justify-between bg-white p-4 shadow-md dark:bg-slate-950 shadow-lg shadow-slate-600">
+        <!-- Left: Menu and Logo -->
+        <div class="flex items-center">
+
+            <i class="ri-menu-line mt-1 hover:text-gray-400 dark:text-white"></i>
+            <img src="Images/icons8-youtube-80.png" alt="YouTube Logo" width=40px height=30px class="ml-4 ">
+           
+
+            <h1 class="text-2xl font-serif font-bold px-2 dark:text-white">You<span class="text-2xl font-serif font-bold" style="color: red;">Tube</span> <sup class="font-thin">IN</sup> </h1>
+        </div>
+
+        <!-- Center: Search Bar -->
+        <div class="flex items-center flex-grow justify-center dark:bg-slate-950">
+            <input type="text" placeholder="Search" class="w-96 p-2 bg-gray-200 rounded-l-full dark:border border-black bg-slate-600" >
+            <button class="p-2 bg-gray-200 rounded-r-full h-10 dark:border border-black text-white bg-slate-600">
+
+                <i class="ri-search-line dark:bg-text-white "></i>
+            </button>
+            <button class="ml-2 p-2 bg-gray-200 rounded-full w-10 h-10 dark:bg-slate-600">
+
+                <i class="ri-mic-fill dark:text-white"></i>
+
+            </button>
+        </div>
+
+        <!-- Right: Icons (Create, Notifications, Profile) -->
+        <div class="flex items-center space-x-4 ">
+
+            <i class="ri-video-add-line dark:text-white"></i>
+            <i class="ri-notification-4-line dark:text-white"></i>
+            <img src="Images/profile.jpg" alt="profile" class="w-10 h-10 rounded-full">
+        </div>
+    </div>
+
+    
+    <div class="w-52 h-fit bg-white absolute dark:bg-slate-950 text-white shadow-lg shadow-slate-600">
+        <div class="p-4">
+            <!-- Menu items -->
+            <ul class="space-y-4">
+                <!-- Section 1 -->
+                <li class="flex items-center space-x-4">
+                    <i class="ri-home-5-line"></i>
+                    <a href="#" class="hover:text-gray-400">Home</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <i class="ri-wireless-charging-line"></i>
+                    <a href="#" class="hover:text-gray-400">Shorts</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <i class="ri-rss-line"></i>
+                    <a href="#" class="hover:text-gray-400">Subscriptions</a>
+                </li>
+
+                <!-- Divider -->
+                <hr class="border-gray-700 my-4">
+
+                <!-- Section 2 -->
+                <li class="flex items-center space-x-4">
+                    <i class="ri-history-line"></i>
+                    <a href="#" class="hover:text-gray-400">History</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <i class="ri-links-line"></i>
+                    <a href="#" class="hover:text-gray-400">Playlists</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <i class="ri-time-line"></i>
+                    <a href="#" class="hover:text-gray-400">Watch later</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <i class="ri-thumb-up-line"></i>
+                    <a href="#" class="hover:text-gray-400">Liked videos</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <i class="ri-download-line"></i>
+                    <a href="#" class="hover:text-gray-400">Downloads</a>
+                </li>
+
+                <!-- Divider -->
+                <hr class="border-gray-700 my-4">
+
+                <!-- Explore Section -->
+                <li class="text-gray-950 uppercase tracking-widest text-xs">Explore</li>
+                <li class="flex items-center space-x-4">
+                    <i class="ri-flashlight-line"></i>
+                    <a href="#" class="hover:text-gray-400">Trending</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <i class="ri-shopping-bag-2-line"></i>
+                    <a href="#" class="hover:text-gray-400">Shopping</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <i class="ri-music-line"></i>
+                    <a href="#" class="hover:text-gray-400">Music</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <i class="ri-clapperboard-fill"></i>
+                    <a href="#" class="hover:text-gray-400">Movies</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <i class="ri-signal-tower-line"></i>
+                    <a href="#" class="hover:text-gray-400">Live</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <i class="ri-gamepad-line"></i>
+                    <a href="#" class="hover:text-gray-400">Gaming</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <i class="ri-article-line"></i>
+                    <a href="#" class="hover:text-gray-400">News</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <i class="ri-basketball-line"></i>
+                    <a href="#" class="hover:text-gray-400">Sports</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <i class="ri-lightbulb-line"></i>
+                    <a href="#" class="hover:text-gray-400">Courses</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <i class="ri-handbag-line"></i>
+                    <a href="#" class="hover:text-gray-400">Fashion & Beauty</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <i class="ri-base-station-line"></i>
+                    <a href="#" class="hover:text-gray-400">Podcasts</a>
+                </li>
+                <!-- Divider -->
+                <hr class="border-gray-700 my-4">
+                <li class="text-gray-950 uppercase tracking-widest text-xs">More from YouTube</li>
+
+                <li class="flex items-center space-x-4">
+                   
+                     <img src="Images/logoo.png" alt="youtube Premium" width="20px" height="10px">
+                    <a href="#" class="hover:text-gray-400">YouTube Premium</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    
+                     <img src="Images/music.png" alt="youtube music " width="16px">
+                    <a href="#" class="hover:text-gray-400">YouTube Music</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <!-- <i class="ri-basketball-line"></i> -->
+                     <img src="Images/kids.png" alt="kids youyube" width="20px">
+                    <a href="#" class="hover:text-gray-400">YouTube Kids</a>
+                </li>
+                <hr class="border-gray-700 my-4">
+                <li class="flex items-center space-x-4">
+                    <i class="ri-settings-4-line"></i>
+                    <a href="#" class="hover:text-gray-400">Settings</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <i class="ri-flag-line"></i>
+                    <a href="#" class="hover:text-gray-400">Report history</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <i class="ri-question-line"></i>
+                    <a href="#" class="hover:text-gray-400">Help</a>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <i class="ri-feedback-line"></i>
+                    <a href="#" class="hover:text-gray-400">Send feedback</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Video Section -->
+    <div class="flex-grow p-6 ml-52">
+        <!-- Categories (horizontal scroll bar) -->
+        <div class="flex space-x-4 p-2 mb-6  rounded-lg hover:text-white ">
+            <button class="px-4 py-2 bg-gray-200 text-black rounded-lg hover:bg-black hover:bg-slate-300 dark:bg-white" >All</button>
+            <button class="px-4 py-2 bg-gray-200 text-black rounded-lg hover:bg-black hover:text-white dark:bg-slate-250">Music</button>
+            <button class="px-4 py-2 bg-gray-200 text-black rounded-lg hover:bg-black hover:text-white dark:bg-slate-250">Tamil
+                Cinema</button>
+            <button class="px-4 py-2 bg-gray-200 text-black rounded-lg hover:bg-black hover:text-white dark:bg-slate-250">Dhanush</button>
+            <button
+                class="px-4 py-2 bg-gray-200 text-black rounded-lg hover:bg-black hover:text-white dark:bg-slate-250">T-Series</button>
+            <button
+                class="px-4 py-2 bg-gray-200 text-black rounded-lg hover:bg-black hover:text-white dark:bg-slate-250">Playlists</button>
+            <button class="px-4 py-2 bg-gray-200 text-black rounded-lg hover:bg-black hover:text-white dark:bg-slate-250">HTML</button>
+            <button class="px-4 py-2 bg-gray-200 text-black rounded-lg hover:bg-black hover:text-white dark:bg-slate-250">Gaming</button>
+        </div>
+
+        <!-- Video Grid -->
+        <div class="grid grid-cols-3 gap-6">
+
+            <div class="bg-white p-4 rounded-lg shadow-lg h-96 dark:bg-slate-950 text-white" >
+                <iframe src="https://www.youtube.com/embed/AiD6SOOBKZI" frameborder="0"
+                    class="w-full rounded-lg h-64"></iframe>
+                <h3 class="mt-4 font-semibold">Vettaiyan - Manasilaayo Lyric | Rajinikanth | T.J. Gnanavel | Anirudh
+                    | Manju Warrier | Subaskaran</h3>
+                <p class="text-gray-600 text-sm">Sony Music South • 1M views • 2 days ago</p>
+            </div>
+
+            <!-- Repeat videos -->
+            <div class="bg-white p-4 rounded-lg shadow-lg dark:bg-slate-950 text-white">
+                <iframe src="https://www.youtube.com/embed/ChvRqfptNtE" frameborder="0" class="w-full rounded-lg h-64
+                     "></iframe>
+                <h3 class="mt-4 font-semibold">Mel Mel Video Song | Ustad Hotel Movie | Dulquer Salmaan , Nithya Menen | Gopi Sunder | Magic Frames</h3>
+                <p class="text-gray-600 text-sm">Magic Frames Music • 500K views • 1 week ago</p>
+            </div>
+
+            <!-- Repeat video -->
+
+            <div class="bg-white p-4 rounded-lg shadow-lg dark:bg-slate-950 text-white">
+                <iframe src="https://www.youtube.com/embed/VNMs0hniZSE" frameborder="0" class="w-full rounded-lg h-64
+                     "></iframe>
+                <h3 class="mt-4 font-semibold">JAM | Part 1 | Karikku | Comedy</h3>
+                <p class="text-gray-600 text-sm">Karikku • 500K views • 1 week ago</p>
+            </div>
+
+            <!-- Repeate video -->
+            <div class="bg-white p-4 rounded-lg shadow-lg dark:bg-slate-950 text-white">
+                <iframe src="https://www.youtube.com/embed/TWQjWLwY9ZE" frameborder="0" class="w-full rounded-lg h-64
+                     "></iframe>
+                <h3 class="mt-4 font-semibold">ARM (Malayalam) - Trailer |Tovino Thomas,Krithi Shetty |Jithin Laal |Dhibu Ninan Thomas|Magic Frames
+                </h3>
+                <p class="text-gray-600 text-sm"> Think Music India
+                    • 500K views • 1 week ago</p>
+            </div>
+            <!-- Repaet video -->
+            <div class="bg-white p-4 rounded-lg shadow-lg dark:bg-slate-950 text-white">
+                <iframe src="https://www.youtube.com/embed/hXzcyx9V0xw" frameborder="0" class="w-full rounded-lg h-64
+                     "></iframe>
+                <h3 class="mt-4 font-semibold">Elemental | Official Trailer</h3>
+                <p class="text-gray-600 text-sm">Pixar
+                    • 500K views • 1 week ago</p>
+            </div>
+            <!-- Repeate video -->
+            <div class="bg-white p-4 rounded-lg shadow-lg dark:bg-slate-950 text-white">
+                <iframe src="https://www.youtube.com/embed/6jR7lL-o7js" frameborder="0" class="w-full rounded-lg h-64
+                     "></iframe>
+                <h3 class="mt-4 font-semibold">Kishkindha Kaandam Official Trailer | Asif Ali | Dinjith Ayyathan|Aparna Balamurali | Joby George</h3>
+                <p class="text-gray-600 text-sm">GOODWILL ENTERTAINMENTS • 500K views • 1 week ago</p>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
