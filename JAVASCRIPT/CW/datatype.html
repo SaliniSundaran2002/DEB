@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <p id="d"></p>
+    <p id="dmo"></p>
+    <script>
+        // variable declaration
+
+        let x = 5;
+        let y = 2;
+        let z = "years";
+        let p = null
+
+        // print declared variables
+
+        document.write("value of x : ",x,"<br>")
+        document.write("value of y : ",y,"<br>")
+        document.write("value of z : ",z,"<br>")
+        document.write("<hr>")
+
+        // print arithmetic operation
+
+        document.getElementById("demo").innerHTML = "Sum of x and y =" + (x + y)
+
+        // joining(concatenation) of number an string
+
+        document.getElementById("d").innerHTML = (x + y) + "years"
+        // or
+        document.getElementById("dmo").innerHTML = (x + y + z)
+
+        // print datatypes
+
+        document.write("Data type of x : ", typeof (x), " <br> Data type of Z : ", typeof (z), " <br> Data type of p : ", typeof (p))
+        document.write("<hr>")
+        document.write("<br>Value of p : ", p)
+
+        // print const
+
+        const c=3.14;
+        document.write("<br> value of constant c : ",c)
+        document.write("<hr>")
+
+        // working of curly braces
+
+        {
+            let x=30;
+            document.write("<br> value of x in sub block: ",x)
+        }
+
+        document.write("<br> value of x in after sub block : ",x)
+    </script>
+</body>
+
+</html>

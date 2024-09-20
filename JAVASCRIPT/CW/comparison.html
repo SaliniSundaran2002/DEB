@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison</title>
+</head>
+
+<body>
+    <script>
+        let x = 5;
+        let y = "5";
+        let z = (x == y);
+        let s = (x === y);
+        let a = 5;
+        let b = 10;
+        // Comparison operation
+        document.write("Comparison of x and y : ", z, "<br>")
+        document.write("Comparison of x and y : ", s, "<br>")
+        // divider
+        document.write("<hr>")
+        // Logical AND operation
+        document.write("Logical AND Operations <br>")
+        let k = (a < b && b > a);
+        document.write("Value of  : ", k, "<br><br>")
+
+        // Logical OR operation
+        document.write("Logical OR Operations <br>")
+        let m = (a < b || b > a);
+        document.write("Value of  : ", m, "<br>")
+
+        // divider
+        document.write("<hr>")
+
+        // Logical NOT operation
+        document.write("Logical NOT Operations <br>")
+        let n = !k;
+        document.write("Value of n: ", n, "<br>")
+        // divider
+        document.write("<hr>")
+        // Boolean Datatype
+        document.write("Boolean Datatype <br>")
+        document.write("Datatype of n : ", typeof (n))
+         // divider
+         document.write("<hr>")
+
+        //  Control structure 
+        // IF statement
+        document.write("IF Statement is <br>")
+        let num1=5;
+        let num2=30;
+        if (num1 < num2)
+        {
+            document.write(`${num1}`, " is smaller than ", `${num2}`)
+        }
+      
+        // divider
+        document.write("<hr>") 
+
+  //  Control structure 
+        // IF-ELSE statement
+        document.write("IF - ELSE Statement <br>")
+        let num3=10;
+        let num4=20;
+        if (num3 > num4)
+        {
+            document.write(`${num3}`, " is smaller than ", `${num4}`)
+        }
+        else
+        {
+            document.write(`${num4}`, " is smaller than ", `${num3}`)
+        }
+
+
+
+    </script>
+</body>
+
+</html>
