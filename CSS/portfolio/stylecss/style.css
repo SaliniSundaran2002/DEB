@@ -10,7 +10,9 @@
     text-align: left;
     text-decoration: none;
     font-family: fantasy;
-    transition: .3s;
+   
+    margin-right: 1000px;
+    margin-top: 50px;
 
 }
 
@@ -26,10 +28,13 @@
     text-align: right;
     text-decoration: none;
     padding: 15px;
-    font-size: 20px;
+    font-size:20px;
     font-family: fantasy;
+    margin-top: 50px;
+    
+    
     /* margin-top: 40px; */
-    transition: .3s;
+   
     
 
 }
