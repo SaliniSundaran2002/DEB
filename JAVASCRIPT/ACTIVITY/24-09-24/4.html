@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th Question</title>
+</head>
+
+<body>
+    <div id="div1">
+        <h4>4. Create a dropdown containing name of books on the book shop page after List of Book heading.</h4>
+        <h2>List of Books</h2>
+    </div>
+    <script>
+        //4. Create a dropdown containing name of books on the book shop page after List of Book heading.
+        let selectInp = document.createElement("select")
+        let option1 = document.createElement("option")
+        // first option
+        option1.innerHTML = "Ram c/o Anandhi"
+        selectInp.appendChild(option1)
+        // second option
+        let option2 = document.createElement("option")
+        option2.innerHTML = "Ettavum Priyapetta Ennodu"
+        selectInp.appendChild(option2)
+        // third option
+        let option3 = document.createElement("option")
+        option3.innerHTML = "Orikkal"
+        selectInp.appendChild(option3)
+        document.getElementById("div1").appendChild(selectInp)
+    </script>
+
+</body>
+
+</html>

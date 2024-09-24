@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2nd Question</title>
+</head>
+
+<body>
+    <div id="div1">
+        <h4>2. Make an unordered list of cinemas on html page using javascript.</h4>
+
+        <h2>List of cinemas</h2>
+    </div>
+    <script>
+        //2. Make an unordered list of cinemas on html page using javascript.
+        let selectInp = document.createElement("ul")
+        let list1 = document.createElement("li")
+        // first option
+        list1.innerHTML = "ARM"
+        selectInp.appendChild(list1)
+        // second option
+        let list2 = document.createElement("li")
+        list2.innerHTML = "Dangal"
+        selectInp.appendChild(list2)
+        // third option
+        let list3 = document.createElement("li")
+        list3.innerHTML = "Elemental"
+        selectInp.appendChild(list3)
+        document.getElementById("div1").appendChild(selectInp)
+    </script>
+</body>
+
+</html>

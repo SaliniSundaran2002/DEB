@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3rd Question</title>
+</head>
+
+<body>
+    <div id="div1">
+        <h4>3. Create a dropdown for programming language classes offered on html page using javascript.</h4>
+    </div>
+    <script>
+        //3. Create a dropdown for programming language classes offered on html page using javascript.
+        let selectInp = document.createElement("select")
+        let option1 = document.createElement("option")
+        // first option
+        option1.innerHTML = "Python"
+        selectInp.appendChild(option1)
+        // second option
+        let option2 = document.createElement("option")
+        option2.innerHTML = "HTML"
+        selectInp.appendChild(option2)
+        // third option
+        let option3 = document.createElement("option")
+        option3.innerHTML = "Java"
+        selectInp.appendChild(option3)
+        document.getElementById("div1").appendChild(selectInp)
+    </script>
+
+</body>
+
+</html>
