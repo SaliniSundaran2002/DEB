@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Creation</title>
+</head>
+
+<body>
+    <div id="jdiv">
+        <h2>Hello world</h2>
+    </div>
+    <div id="kdiv">
+        <!-- <h2>Hello world</h2> -->
+    </div>
+    <div id="idiv">
+        <!-- <h2>Hello world</h2> -->
+    </div>
+    <script>
+        let name = document.createElement("p")
+        name.innerHTML = "Welcome to the world of javascript"
+        document.getElementById("jdiv").appendChild(name)
+        let box = document.createElement("input")
+        box.placeholder = "Enter the name"
+        document.getElementById("jdiv").appendChild(box)
+        let box1 = document.createElement("input")
+        box1.placeholder = "Enter the password"
+        document.getElementById("kdiv").appendChild(box1)
+        let element = document.createElement("button")
+        element.innerHTML = "Login"
+        document.getElementById("idiv").appendChild(element)
+
+    </script>
+</body>
+
+</html>

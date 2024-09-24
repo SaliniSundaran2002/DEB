@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ternary Operation</title>
+</head>
+<body>
+    <script>
+        // Ternary Operations
+        // Largest among 2 numbers
+        document.write("Ternary Operations<br>")
+        let a = (30 > 50) ? 30:50
+        document.write("Largest among 2 numbers: ",a)
+        document.write("<br>")
+
+        // Largest among 3 numbers
+        let b = (50>10)?(50>20)? 50:20 : (10>20)?10:20
+        document.write("Largest among 3 numbers: " ,b)
+        document.write("<br>")
+        let c = (100>300)?(100>400)?100:400:(300>400)?300:400
+        document.write("Largest among 3 numbers: " ,c)
+
+
+        // bitwise operations
+        document.write("<br>Bitwise Operations")
+        let x = 5
+        let y = 4
+        let z = x | y
+        let s = x & y
+        document.write("<br>Bitwise OR = ",z,"<br>")
+        document.write("Bitwise AND = ",s,"<br>")
+    </script>
+</body>
+</html>

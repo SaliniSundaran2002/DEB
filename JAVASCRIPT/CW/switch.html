@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+</head>
+
+<body>
+    <script>
+        let x = 20,
+            y = 40,
+            z = ` * `;
+        switch (z) {
+            case ' + ': {
+                document.write("The sum is : ", (x + y))
+                break;
+            }
+            case ' - ': {
+                document.write("The difference is : ", (x - y))
+                break;
+            }
+            case ` * `: {
+                document.write("The product is : ", (x * y))
+                break
+            }
+            case ` / `: {
+                document.write("The quotient is : ", (x / y))
+                break;
+            }
+            default: {
+                document.write("Enter a valid operation")
+            }
+        }
+    </script>
+</body>
+
+</html>
