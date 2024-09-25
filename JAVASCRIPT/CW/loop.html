@@ -9,38 +9,42 @@
 
 <body>
     <script>
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i<10; i++) {
             document.write("Javascript <br><br>")
         }
         // first 10 natural numbers
         document.write("first 10 natural numbers")
-        for (i = 0; i <= 10; i++) {
+        for (let i = 0; i<=10; i++) {
             document.write("<br>", i, "<br>")
         }
         // first 10 even numbers
         document.write("First 10 Even Numbers<br>")
-        for (i = 0; i < 10; i+2) {
-            i = i + 2
-            document.write(i, "<br>")
+        for (let i = 2; i <=10; i+=2) {
+           
+            document.write(i , "<br>")
         }
-        // // sum of numbers
+        
+    // sum of numbers
         document.write("sum of 10 numbers")
-        sum = 0
-        for (i = 0; i <= 10; i++) {
-            sum = sum + i
+        let s = 0
+        for (let i = 0; i <= 10; i++) {
+            s = s + i
         }
-        document.write("<br> Sum of 10 numbers ", sum)
+        document.write("<br> Sum of 10 numbers ", s)
 
-        // reverse a number
+        // // reverse a number
         document.write("<br>Reverse a number<br>")
         let num = 123
         let rev = 0
-        for (;num>0;Math.floor(num / 10)){
+        for (;num>0;num = Math.floor(num / 10)){
             let rem = num % 10
             rev = (rev * 10) + rem
         }
 
         document.write("Reverse of a number : ",rev)
+
+
+        
 
 
 
