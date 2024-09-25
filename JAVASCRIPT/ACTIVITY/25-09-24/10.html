@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10th Question</title>
+</head>
+
+<body>
+    <script>
+        document.write("10. Write a program to print the minimum & maximum element in array = [8, 2, 6, 7, 3, 1]<br>");
+
+        let arr = [8, 2, 6, 7, 3, 1];
+
+        let minelement = arr[0];
+        let maxelement = arr[0];
+
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] < minelement) {
+                minelement = arr[i];
+            }
+            if (arr[i] > maxelement) {
+                maxelement = arr[i];
+            }
+        }
+        document.write("Minimum element in the array: " + minelement + "<br>");
+        document.write("Maximum element in the array: " + maxelement + "<br>");
+
+    </script>
+</body>
+
+</html>
