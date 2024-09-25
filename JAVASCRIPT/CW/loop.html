@@ -19,15 +19,30 @@
         }
         // first 10 even numbers
         document.write("First 10 Even Numbers<br>")
-        for (i = 2; i < 10; i + 2) {
-            document.write(i)
+        for (i = 0; i < 10; i+2) {
+            i = i + 2
+            document.write(i, "<br>")
         }
-        // sum of numbers
+        // // sum of numbers
         document.write("sum of 10 numbers")
         sum = 0
-        for (i = 0; i<10 ; i++){
-            document.write(i + sum, "<br>")
+        for (i = 0; i <= 10; i++) {
+            sum = sum + i
         }
+        document.write("<br> Sum of 10 numbers ", sum)
+
+        // reverse a number
+        document.write("<br>Reverse a number<br>")
+        let num = 123
+        let rev = 0
+        for (;num>0;Math.floor(num / 10)){
+            let rem = num % 10
+            rev = (rev * 10) + rem
+        }
+
+        document.write("Reverse of a number : ",rev)
+
+
 
 
     </script>
