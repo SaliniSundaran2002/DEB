@@ -11,7 +11,7 @@
     <script>
         document.write("11. Write a program to search an element in an array<br>")
         let a = [2, 4, 6, 8, 10];
-        let m = 6
+        let m = 4
         let f = false
         for (let i = 0; i < a.length; i++) {
             if (a[i] == m) {
@@ -19,10 +19,12 @@
                 document.write("Element " + m + " found at index: " + i + "<br>");
                 break;
             }
-            else{
-                document.write("Not Found <br>");
-            }
+            
+            
 
+        }
+        if(!f){
+        document.write(m," not found")
         }
 
     </script>
