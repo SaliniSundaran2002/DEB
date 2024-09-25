@@ -10,12 +10,20 @@
 <body>
     <script>
         document.write("03. Write a program to display first 20 odd numbers and find their sum.<br>")
-        let i = 1;
-            for(;i<=20;i++){
-                let odd = i% 2 ==1
-                // document.write(odd)
+        let num = 1, count = 0, sum = 0;
+            while(num <= 40){
+                if(num % 2 == 1){
+                    document.write(num,"<br>")
+                    
+                    sum = sum + num
+                    count++
+                    
+                }
+                num++ 
+                
             }
-            document.write(i)
+            document.write("Sum of first 20 odd numbers = ",sum)
+            
     </script>
 </body>
 
