@@ -10,8 +10,9 @@
 <body>
     <div id="div1">
         <h4>4. Create a dropdown for list of cakes and print the value of second option.</h4>
+        <div id="div2">
         <h2>List of Cakes</h2>
-
+    </div>
     </div>
     <script>
         //4. Create a dropdown for list of cakes and print the value of second option.
@@ -22,14 +23,16 @@
         selectInp.appendChild(option1)
         // second option
         let option2 = document.createElement("option")
-        option2.innerHTML = "BlackCurrent"
+        option2.innerHTML = "BlackCurrant"
         selectInp.appendChild(option2)
         // third option
         let option3 = document.createElement("option")
         option3.innerHTML = "Blueberry"
         selectInp.appendChild(option3)
         document.getElementById("div1").appendChild(selectInp)
-        document.getElementById("div1").appendChild(option2)
+        // document.getElementById("div2").appendChild(option2)
+        let selctVal = option2.value;
+        document.write(selctVal)
     </script>
 
 </body>
