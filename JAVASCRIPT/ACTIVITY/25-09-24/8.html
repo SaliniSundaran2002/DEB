@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8th Question</title>
+</head>
+<body>
+    <script>
+        document.write("08. Program to divide an array into two halves.<br>");
+
+let arr = [20, 25, 30, 35, 40, 45, 50, 55];
+let midpoint = arr.length / 2;
+let firstHalf = arr.slice(0, midpoint); 
+let secondHalf = arr.slice(midpoint); 
+
+document.write("The given array: " + arr + "<br>")
+document.write("First half: " + firstHalf + "<br>");
+document.write("Second half: " + secondHalf + "<br>");
+
+    </script>
+</body>
+</html>
