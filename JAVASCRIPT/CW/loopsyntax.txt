@@ -1,0 +1,31 @@
+Loops 
+
+For
+While
+Do while
+
+
+Syntax of for
+
+for(initialization; condition; increment/decrement){
+Set of statements
+}
+
+
+Syntax of while
+
+Initialize looping variable
+while(condition){
+Statement
+increment/decrement
+}
+
+
+Syntax of do while
+
+Initialization
+Do{
+Statements;
+increment/decrement;
+}
+while(condition);
