@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Arrays</title>
+</head>
+
+<body>
+    <script>
+        let a = [1, 2, 3, 4, 5]
+        let b = [6, 7, 8, 9, 10]
+        let sum = []
+        if (a.length == b.length) {
+            document.write("Same Length")
+            for (let i = 0; i < a.length; i++) {
+                sum[i] = a[i] + b[i]
+                document.write(`<br>`, sum[i], "&nbsp")
+            }
+            
+
+        }
+        else {
+            document.write("Not same length")
+        }
+
+// using in , x act as index
+        // for(x in a){
+        //     document.write("&nbsp<br>",(a[x]))
+        // }
+        // for (x in b){
+        //     document.write("<br>",b[x])
+        // }
+        // // using of 
+        // for (x of sum){
+        //     document.write("<br>",x,"<br>")
+        // }
+
+        // add elements 
+        let c = 0
+        for(x in sum){
+            document.write("<br><br>",sum[x])
+            c = c + sum[x]
+
+        }
+        document.write("<br> sum = ",c)
+            
+        let s=0
+        for(x of sum){
+            document.write("<br><br>",x)
+            s = s+x
+        }
+        document.write("<br> Sum = ", s)
+
+    </script>
+</body>
+
+</html>
