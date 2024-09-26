@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5th Question</title>
+</head>
+
+<body>
+    <!-- Write a program to calculate the root of a quadratic equation. -->
+    <script>
+
+        let a = 2,
+            b = 3,
+            c = 1;
+
+        let discriminant = b**2 - 4*a*c;
+
+        if (discriminant >= 0) {
+            let root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+            let root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+
+            document.write("Root 1: " + root1 + "<br>");
+            document.write("Root 2: " + root2 + "<br>");
+        } else {
+           
+            document.write("No real roots exist. The discriminant is negative.");
+        }
+    </script>
+
+</body>
+
+</html>
