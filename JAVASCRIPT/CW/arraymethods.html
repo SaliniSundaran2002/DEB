@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+</head>
+<body>
+    <script>
+
+        let a = [1,2,3,4];
+        // add a element using push
+        a.push(5);
+        document.write("Push : ",a)
+        // remove a element using pop
+        a.pop()
+        document.write("<br>Pop : ",a)
+        // convert to string
+        let c = a.toString();
+        document.write("<br>Convert into string : ",c[2])
+        // concat
+        let e=[6,7,8,9]
+        let d =a.concat(e)
+        document.write("<br>Concat : ",d)
+        document.write("<br>",e)
+        // splicing , add elements into a specified locations 
+        e.splice(2,0,1,2,3)
+        document.write("<br>splice : ",e)
+        // slicing function
+        let k = e.slice(1,6)
+        document.write("<br>Slice : ",k)
+        // reverse array
+        document.write("<br>Reverse an array : ",a.reverse())
+        // // reverse a string
+        // let m ="salini"
+        // document.write("<br>reverse a string: ",m.reverse())
+        // sorting
+        let i = [8,5,9,3,0,2]
+        document.write("<br>sorting : ",i.sort())
+        // find index of a particular element
+        document.write("<br>index : ",i.indexOf(3))
+        // join 
+        document.write("<br>Join * : ",i.join("*"))
+
+    </script>
+</body>
+</html>
