@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        let num =1
+        let a = [[],[],[]]
+        for(let i=0;i<3;i++){
+            for(let j=0;j<4;j++){
+                a[i][j] = num
+                num = num +1 
+                document.write(a[i][j] + "&nbsp")
+            }
+            document.write("<br>")
+        }
+        document.write("Matrix Transpose of A<br>")
+        for(let i=0;i<4;i++){
+            for(let j=0;j<3;j++){
+                document.write(a[j][i] + "&nbsp")
+            }
+            document.write("<br>")
+        }
+    </script>
+</body>
+</html>

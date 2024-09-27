@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2d Array 3</title>
+</head>
+<body>
+    <script>
+        let num =2
+        let arr = [[],[],[]]
+        for(let i=0;i<3;i++){
+            for(let j=0;j<4;j++){
+                arr[i][j] = num
+                 num = num + 2
+            }
+           
+        }
+        for(let i=0;i<3;i++){
+            for(let j=0;j<4;j++){
+                document.write(arr[i][j] + " ")
+            }
+            document.write("<br>")
+        }
+    </script>
+</body>
+</html>
