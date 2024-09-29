@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+    <!-- Read two matrix and check whether they are same or not -->
+
+    <script>
+        let arr1 = [[1, 3, 5], [7, 9, 11], [13, 15, 17]]
+        let arr2 = [[1, 3, 5], [7, 9, 11], [13, 15, 19]]
+        document.write("Matrix A <br>")
+        for (let i = 0; i < arr1.length; i++) {
+            for (let j = 0; j < arr1.length; j++) {
+                document.write(arr1[i][j] + "&nbsp")
+            }
+            document.write("<br>")
+        }
+        document.write("Matrix B <br>")
+        for (let i = 0; i < arr2.length; i++) {
+            for (let j = 0; j < arr2.length; j++) {
+                document.write(arr2[i][j] + "&nbsp")
+            }
+            document.write("<br>")
+        }
+
+        let matricesAreSame = true; 
+
+        for (let i = 0; i < arr1.length; i++) {
+            for (let j = 0; j < arr1[i].length; j++) {
+                if (arr1[i][j] !== arr2[i][j]) {  
+                    matricesAreSame = false;      
+                    break; 
+                }
+            }
+            if (!matricesAreSame) break;  
+        }
+
+       
+        if (matricesAreSame) {
+            document.write("Two matrices are the same.");
+        } else {
+            document.write("Two matrices are not the same.");
+        }
+
+    </script>
+</body>
+
+</html>
