@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car</title>
+</head>
+
+<body>
+    <script>
+        const currentYear = 2024;
+        let car = {
+            make: 'Honda',
+            model: 'Civic',
+            year: 2022,
+            getCarAge: function () {
+                let age = currentYear - this.year
+                document.write(`The Car is ${age} year old`)
+            }
+        }
+        document.write("Make: " + car.make + "<br>" +
+            "Model " + car.model + "<br>" +
+            "Year: " + car.year + "<br>")
+        car.getCarAge();
+    </script>
+</body>
+
+</html>

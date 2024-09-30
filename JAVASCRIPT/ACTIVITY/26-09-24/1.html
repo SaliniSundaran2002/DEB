@@ -15,20 +15,66 @@
      d. Delete the least interested film from the list c. 
      Make a different list from 3rd position to 6th position d. Search whether "ARM" is on your list -->
     <script>
-        let movie = ['ARM', 'Elemental', 'Dangal', 'Wish', 'Inside Out 2', 'Up', 'Paperman']
+
+        let movie = [ 'Up','ARM', 'Elemental', 'Dangal', 'Dhadak', 'Inside Out 2', 'Paperman']
+
         document.write(movie)
+
+
+
+        document.write("<br><br><br>")
+        document.write("<br> Find the position <br>")
+        let fMovie = 'Dhadak'
+        let pos = -1
+        for (let i = 0; i < movie.length; i++) {
+            if (movie[i] === fMovie) {
+                pos = i
+                // break;
+            }
+        }
+        if (pos != 1) {
+            document.write(`My favorite movie is ${fMovie} and its position is ${pos}`)
+        }
+        // document.write(movie[2])
         // Add a movie
+        document.write("<br><br><br>")
         let a = ['Golam']
         movie.push(a)
-        document.write("<br>Removed movie is: ",a)
+        document.write("<br>Removed movie is: ", a)
         document.write("<br>Add a movie : ", movie)
 
         // Pop one film from the list 
+        document.write("<br><br><br>")
         movie.pop()
         document.write("<br>Remove movie: ", movie)
-        document.write("<br><br><br>")
+        document.write("<br><br><br> Slice")
+        document.write("<br>")
         let b = movie.slice(3, 7)
         document.write(b)
+
+        // Search
+        document.write("<br><br><br>")
+        let searchMovie = 'ARM'
+        let flag = false
+        for (let i = 0; i < movie.length; i++) {
+            if (movie[i].toLowerCase() == searchMovie.toLowerCase()) {
+                flag = true
+                break
+            }
+        }
+
+        if (flag) {
+            document.write(`<br>${searchMovie} is found in this list`)
+        }
+        else {
+            document.write(`<br>${searchMovie} is not found in list`)
+        }
+
+
+        // Least interested
+        document.write("<br><br>")
+        document.write("Lease Interested Movie is : " + movie.splice(0,1))
+
 
     </script>
 </body>

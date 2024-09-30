@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5th Question</title>
+</head>
+
+<body>
+    <form action="">
+
+        <label>Enter first number: </label>
+        <input type="text" id="fn"><br>
+        <label>Enter second number: </label>
+        <input type="text" id="sn"><br>
+        <button type="button" onclick="performCalculation()">Check</button>
+        <p id="display"></p>
+    </form>
+
+    <script>
+        function performCalculation() {
+            let a = document.getElementById("fn").value;
+            let b = document.getElementById("sn").value;
+            let dis = document.getElementById("display")
+            if (a && b) {
+                // document.write("true");
+                if (a % b == 0) {
+                    document.write("Even")
+                }
+                else {
+                    document.write("Odd")
+                }
+            }
+            else {
+                alert("Enter two numbers")
+            }    
+        }
+
+    </script>
+</body>
+
+</html>

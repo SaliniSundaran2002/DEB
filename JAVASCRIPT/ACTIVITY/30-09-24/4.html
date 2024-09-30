@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th Question</title>
+</head>
+
+<body>
+    <form action="">
+        <label>Username: </label>
+        <input type="text" id="username">
+        <button type="button" onclick="userInfo()">Login</button>
+        <p id="display"></p>
+    </form>
+
+    <script>
+        function userInfo(username) {
+            let user = document.getElementById("username").value
+            document.getElementById("display")
+            function displayMessage() {
+                document.getElementById("display")
+                document.write("User " + user + "logged in")
+            }
+
+            if (user) {
+                document.write("Welcome " + user)
+                document.write("<br> User " + user + " logged in")
+            }
+            else {
+                alert("Please enter the username")
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
