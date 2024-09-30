@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naming</title>
+</head>
+<body>
+    <label>Enter your name: </label>
+    <input type="text" id="nameInput"><br>
+    <label>Enter your age: </label>
+    <input type="text" id="ageInput"><br>
+    <button onclick="showMe()">Show</button>
+    <p id="output"></p>
+    <!-- <p id="output1"></p> -->
+    <script>
+        function showMe(){
+            let name = document.getElementById("nameInput").value;
+            let age = document.getElementById("ageInput").value;
+            document.getElementById("output").textContent = ("I am " + name + " I am "  + age + " years old")
+        }
+    </script>
+</body>
+</html>
