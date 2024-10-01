@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This </title>
+</head>
+
+<body>
+    <script>
+        function greet(greetings) {
+            console.log(greetings + ',' + this.name)
+        }
+
+        let person = {
+            name: 'Alice'
+        }
+
+        greet.call(person, 'Hello')
+
+
+        const persons = {
+            fullName: function (city, country) {
+                console.log(this.fname + " " + " " + this.lname + " " + city + " " + country)
+            }
+        }
+
+
+        const person1 = {
+            fname: 'Alice',
+            lname: 'Bob'
+        }
+
+        const person2 = {
+            fname : 'John',
+            lname : 'Wick'
+        }
+
+        const person3 = {
+            fname : 'Alan',
+            lname : 'Smith'
+        }
+        const boundFunction = persons.fullName.bind(person3,"America","UK");
+        boundFunction();
+        persons.fullName.call(person1, 'Newyork', "usa") //Call method
+        persons.fullName.apply(person2,["Delhi","India"]) //Applay method
+       
+    </script>
+</body>
+
+</html>
