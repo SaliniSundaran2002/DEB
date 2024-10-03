@@ -48,14 +48,15 @@ document.write("<br><br>")
 // 11. Compare “Hello World” & “hEllO World” and display the result & its type.
 document.write(" 11. Compare “Hello World” & “hEllO World” and display the result & its type.<br><br>")
 let x = "Hello World", y = "hEllO World";
-if (x = y)
+if (x === y)
 {
-    document.write("Same")
-    document.write("<br>Type of x: ", typeof(x) , "&nbsp &nbsp Datatype of y: ", typeof(y))
+    document.write("The strings are equal")
+    
 }
 else{
-    document.write("Different")
+    document.write("The strings are not equal")
 }
+document.write("<br>Type of x: ", typeof(x) , "&nbsp &nbsp Type of y: ", typeof(y))
 document.write("<br><br>")
 
 
