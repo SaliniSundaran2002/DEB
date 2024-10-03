@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th Question</title>
+</head>
+<body>
+    <!-- Create a simple task manager. Allow users to input a task and add it to a list. Each task should display a "Remove" button next to it. When clicked, the button should remove the task from the list. Additionally, implement an "Edit" button for each task. Clicking the "Edit" button should replace the task text with an input field pre-filled with the current task text. After editing, clicking a "Save" button should update the task. -->
+
+    <h2>Task Manager</h2>
+    <label for="task">Enter a task : </label>
+    <input type="text" id="task">
+    <button onclick="AddTask()">ADD TASK</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        function addTask(){
+        const taskInput = document.getElementById('task');
+        const taskList = document.getElementById('taskList');
+        if(taskInput.value.trim() != ''){
+            const li = document.createElement('li')
+            li.textContent = taskInput.value;
+            const removeButton = document.createElement('button')
+            removeButton.textContent = 'Remove'
+            removeButton.onclick = function(){
+                taskList.removeChild(li) 
+            };
+            li.appendChild(removeButton);
+            taskList.appendChild(li)
+            taskInput.value=''
+        }
+    }
+        
+    </script>
+</body>
+</html>

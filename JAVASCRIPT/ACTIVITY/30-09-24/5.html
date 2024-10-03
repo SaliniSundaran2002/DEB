@@ -20,12 +20,14 @@
 
     <script>
         function performCalculation() {
-            let a = document.getElementById("fn").value;
-            let b = document.getElementById("sn").value;
+            let a =  parseInt(document.getElementById("fn").value);
+            let b =  parseInt(document.getElementById("sn").value);
             let dis = document.getElementById("display")
+            let sum = a + b
+            document.write("Sum = " , sum , "<br>") 
             if (a && b) {
                 // document.write("true");
-                if (a % b == 0) {
+                if (sum % 2 == 0) {
                     document.write("Even")
                 }
                 else {

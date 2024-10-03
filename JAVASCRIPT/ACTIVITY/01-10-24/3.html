@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3rd Question</title>
+</head>
+
+<body>
+    <p id="display"></p>
+    <p id="displayCall"></p>
+    <p id="displayApply"></p>
+    <p id="displayBind"></p>
+    <script>
+        let person1 = {
+            firstname: 'Alan',
+            lastname: 'Smith',
+            printFullName: function () {
+                document.write(`Full Name: ${this.firstname} ${this.lastname} <br>`)
+            }
+        }
+        document.getElementById("display").textContent = person1.printFullName()
+
+        const person2 = {
+            firstname: 'John',
+            lastname: 'Wick'
+        }
+        const person3 = {
+            firstname: 'Latex',
+            lastname: 'Eterna'
+        }
+        const person4 = {
+            firstname: 'Ajo',
+            lastname: 'Thomas'
+        }
+
+        function printFullName() {
+            person1.printFullName.call(person2)
+            person1.printFullName.apply(person3)
+            const persons = person1.printFullName.bind(person4)
+            persons();
+        }
+        printFullName();
+    </script>
+</body>
+
+</html>

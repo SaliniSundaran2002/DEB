@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1st Question</title>
+</head>
+
+<body>
+    <script>
+        // let name = 'salini'
+        // let greetLater = (name) =>setTimeout(
+        //     document.write("Hello " + this.name)
+        // );
+
+        // greetLater('salini');
+
+        function greetLater(name) {
+            setTimeout(() => {
+                document.write("Hello" + this.name)
+            })
+        }
+        greetLater("salini")
+
+    </script>
+</body>
+
+</html>
