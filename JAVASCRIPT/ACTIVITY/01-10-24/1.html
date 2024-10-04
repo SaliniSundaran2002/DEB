@@ -9,17 +9,11 @@
 
 <body>
     <script>
-        // let name = 'salini'
-        // let greetLater = (name) =>setTimeout(
-        //     document.write("Hello " + this.name)
-        // );
 
-        // greetLater('salini');
-
-        function greetLater(name) {
+        const greetLater = (name) => {
             setTimeout(() => {
-                document.write("Hello" + this.name)
-            })
+                document.write(`Hello ${name}`)
+            },10000)
         }
         greetLater("salini")
 

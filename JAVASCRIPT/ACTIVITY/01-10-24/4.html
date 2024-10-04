@@ -7,57 +7,71 @@
 </head>
 <body>
     <h2>Task Manager</h2>
-    <label for="task">Enter a task: </label>
+    <label for="task">Enter the tasks</label>
     <input type="text" id="task">
-    <button onclick="addTask()">ADD TASK</button>
-    <ul id="taskList"></ul>
+    <button onclick="addTask()">Submit</button>
+    <ul id="displayList"></ul>
 
     <script>
-    function addTask() {
-        const taskInput = document.getElementById('task');
-        const taskList = document.getElementById('taskList');
 
-        if (taskInput.value.trim() !== '') {
-            const li = document.createElement('li');
-            const taskText = document.createElement('span');
-            taskText.textContent = taskInput.value;
+        function addTask() {
 
-            // Remove button
-            const removeButton = document.createElement('button');
-            removeButton.textContent = 'Remove';
-            removeButton.onclick = function() {
-                taskList.removeChild(li);
-            };
+            let tasklist = document.getElementById('displayList');
+            let taskValue =  document.getElementById('task');
+            let tasks = taskValue.value.trim();
 
-            // Edit button
-            const editButton = document.createElement('button');
+            let li = document.createElement('li');
+            li.textContent = tasks;
+
+            let removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove'
+            removeButton.onclick = function () {
+
+                tasklist.removeChild(li);
+            }
+
+            let editedText = document.createElement('input');
+            editedText.type = 'text';
+            editedText.value = tasks;
+            // editedText.textContent = li.textContent;
+
+            let editButton = document.createElement('button');
             editButton.textContent = 'Edit';
-            editButton.onclick = function() {
-                const editInput = document.createElement('input');
-                editInput.type = 'text';
-                editInput.value = taskText.textContent;  // Preserve current task text
-                
-                const saveButton = document.createElement('button');
+            editButton.onclick = function(){
+                li.replaceWith(editedText)
+                let saveButton = document.createElement('button');
                 saveButton.textContent = 'Save';
-                saveButton.onclick = function() {
-                    taskText.textContent = editInput.value;  // Save the updated task text
-                    li.removeChild(editInput);  // Remove edit input
-                    li.removeChild(saveButton);  // Remove save button after saving
-                    li.appendChild(editButton);  // Re-add the edit button
-                };
+                tasklist.appendChild(saveButton);
 
-                li.removeChild(editButton);  // Remove the edit button temporarily
-                li.appendChild(editInput);
-                li.appendChild(saveButton);
-            };
 
-            li.appendChild(taskText);
+            saveButton.onclick = function () {
+
+                li.textContent = editedText.value;
+                tasklist.appendChild(li);
+                editedText.remove();
+                saveButton.remove();
+                li.appendChild(removeButton);
+                li.appendChild(editButton);
+                // tasklist.appendChild(removeButton);
+                // removeButton.onclick();
+            }
+
+            }
+
             li.appendChild(removeButton);
             li.appendChild(editButton);
-            taskList.appendChild(li);
-            taskInput.value = '';  // Clear the task input field after adding the task
+            // 
+            tasklist.appendChild(li);
+            // tasklist.appendChild(editButton);
+            taskInput.value = ' ';
         }
-    }
+
+        
+
+
+
+
     </script>
 </body>
+
 </html>
