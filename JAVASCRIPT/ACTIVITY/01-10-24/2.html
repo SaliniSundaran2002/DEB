@@ -12,28 +12,44 @@
     <p id="displayBook2"></p>
 
     <script>
-        let Book = new Object();
-            Book.title = 'Orikkal'
-            Book.author = 'N. Mohanan'
-            Book.year = 1999
-            Book.getDetails= function() {
+        // let Book = new Object();
+        //     Book.title = 'Orikkal'
+        //     Book.author = 'N. Mohanan'
+        //     Book.year = 1999
+        //     Book.getDetails= function() {
+        //         return(`Title : ${this.title} , Author : ${this.author}, Year : ${this.year}`)
+        //     }
+
+
+        //     document.getElementById("display").textContent = Book.getDetails();
+
+        //     const Book1 = Book
+        //     Book1.title = 'Ram c/o Anandhi'
+        //     Book1.author = 'Akhil P Dharmajan'
+        //     Book1.year = 2020
+        //     document.getElementById("displayBook1").textContent = Book1.getDetails()  
+
+        //     const Book2 = Book1
+        //     Book2.title = 'Meerasadhu'
+        //     Book2.author = 'K.R.Meera'
+        //     Book2.year = 2008
+        //     document.getElementById("displayBook2").textContent = Book2.getDetails()
+
+        const Book = {
+            this:title = title,
+            this:author = author,
+            this:year = year,
+            getDetails : function(){
                 return(`Title : ${this.title} , Author : ${this.author}, Year : ${this.year}`)
+
             }
 
 
-            document.getElementById("display").textContent = Book.getDetails();
+        }
+        document.getElementById('display').textContent=Book.getDetails()
 
-            const Book1 = Book
-            Book1.title = 'Ram c/o Anandhi'
-            Book1.author = 'Akhil P Dharmajan'
-            Book1.year = 2020
-            document.getElementById("displayBook1").textContent = Book1.getDetails()  
-
-            const Book2 = Book1
-            Book2.title = 'Meerasadhu'
-            Book2.author = 'K.R.Meera'
-            Book2.year = 2008
-            document.getElementById("displayBook2").textContent = Book2.getDetails()
+        const Book1 = new Object()["erfg","fgh","2002"]
+        Book.getDetails.call(Book1)
     </script>
 </body>
 </html>

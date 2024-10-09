@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Playlist Manager</title>
+    <style>
+        ul{
+            padding: 0px;
+            margin: 5px 0;
+            font-size: larger;
+        }
+        li{
+            list-style-type: none;
+        }
+
+        .priority-high{
+            color: red;
+        }
+        .priority-medium{
+            color: yellow;
+        }
+        .priority-low{
+            color: green;
+        }
+        .watched{
+            color: gray;
+        text-decoration: line-through;
+        }
+
+        input{
+            padding-top: 4px;
+            /* margin-left: 740px; */
+            margin-top: 25px;
+            display: inline-flex;
+            width: 15%;
+            /* max-width: fit-content; */
+            height: 30px;
+            border-radius: 5px;
+            &:hover{
+                /* border-color:indigo; */
+                background-image: linear-gradient(to right,rgb(255, 0, 212) , rgb(0, 0, 0));
+            }
+
+
+        
+        }
+        h2{
+            text-align: center;
+            color: white;
+            &:hover{
+                color: yellow;
+            }
+        }
+
+        button{
+            padding: 10px;
+            /* margin-left: 47%; */
+            margin: auto;
+            padding: auto;
+            margin-top: 30px;
+            display: inline-block;
+            border-radius: 5px;
+            border-color: white;
+            background-color: rgb(76, 182, 231);
+            color: white;
+            font-weight: bolder;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
+            &:hover{
+                background-image: linear-gradient(to right,rgb(255, 0, 212) , rgb(0, 0, 0));
+            }    
+            
+        }
+
+        body{
+            background-image: linear-gradient(to left, rgb(0, 0, 0) ,rgb(43, 176, 238));
+        }
+    </style>
+</head>
+<body>
+    <h2>Movie Playlist Manager</h2>
+    <script src="movieList.js"></script>
+
+    <input type="text" id="movie" placeholder="Enter a movie name ">
+    <input type="text" id="priority" placeholder="Enter the priority in between 1-3">
+    <button onclick="addMovie()">Add Movie</button>
+    <ul id="movieList" ></ul>
+</body>
+</html>

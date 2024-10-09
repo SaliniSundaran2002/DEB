@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker Application</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        form {
+            text-align: center;
+            padding: 2%;
+            margin: auto;
+            display: grid;
+            width: 25%;
+            align-items: center;
+            padding-top: 13px;
+            margin-bottom: 10px;
+        }
+
+        input, textarea {
+            margin-bottom: 8px;
+            height: 60px;
+            margin-top: 50px;
+        }
+
+        button {
+            margin-top: 50px;
+            height: 50px;
+            width: 25%;
+            margin: auto;
+        }
+
+        .Food {
+            color: green;
+        }
+
+        .Transport {
+            color: blue;
+        }
+
+        .Entertainment {
+            color: purple;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <textarea cols="40px" rows="4px" id="description" placeholder="Enter the expense description"></textarea>
+        <input type="number" id="amount" placeholder="Enter the expense amount">
+        <input type="text" id="category" placeholder="Enter the expense category">
+        <button type="button" onclick="addExpense()">Add Expense</button>
+        <ul id="display"></ul>
+    </form>
+
+    <script>
+        let expenses = []
+        let categories = []
+
+        function addExpense() {
+            const descriptionInput = document.getElementById('description')
+            const amountInput = document.getElementById('amount')
+            const categoryInput = document.getElementById('category')
+            const display = document.getElementById('display')
+            let expense = descriptionInput.value.trim()
+            let amount = amountInput.value.trim()
+            let category = categoryInput.value.trim()
+
+            if (expense != '' && !isNaN(amount) && category != '') {
+                expenses.push({ expense, amount, category })
+                categories.push(category)
+                const li = document.createElement('li')
+                li.textContent = `${expense} - ${amount} - ${category}`
+
+                switch (category.toLowerCase()) {  // Fixed the toLowerCase() method
+                    case 'food':
+                        li.classList.add('Food')
+                        break
+                    case 'transport':
+                        li.classList.add('Transport')
+                        break
+                    case 'entertainment':
+                        li.classList.add('Entertainment')
+                        break
+                }
+
+                const completeButton = document.createElement('button')
+                completeButton.textContent = 'Completed'
+                completeButton.onclick = function () {
+                    li.classList.toggle('completed')
+                }
+
+                li.appendChild(completeButton)
+                display.appendChild(li)
+                descriptionInput.value = ''
+                amountInput.value = ''
+                categoryInput.value = ''
+            } else {
+                alert('Please enter valid inputs')
+            }
+        }
+    </script>
+</body>
+</html>
