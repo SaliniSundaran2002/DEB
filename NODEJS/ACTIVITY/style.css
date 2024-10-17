@@ -10,7 +10,6 @@ body {
     padding: 10px;
     border-style: none;
     box-shadow: 5px 5px 120px rgb(255, 0, 119);
-    ;
     border-radius: 20px;
     width: 50%;
     text-align: center;
@@ -29,4 +28,19 @@ h2 {
     font-size: 18px;
     border-style: none;
 }
+
+.input-align {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.radio-group {
+    display: flex;
+    justify-content: center; /* Center-aligns radio buttons */
+    align-items: center; /* Ensures vertical alignment */
+  }
+  
+  .radio-group label {
+    margin-right: 15px; /* Adds space between radio buttons */
+  }
 
