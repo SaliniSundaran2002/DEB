@@ -1,0 +1,174 @@
+<!-- Recipe Finder with LocalStorage:
+Develop a recipe finder application where users can search for recipes based on ingredients.
+a. Create a form where users can input a list of ingredients.
+b. Display a list of recipes that include the specified ingredients (use a predefined array of recipes).
+c. Allow users to save their favorite recipes to localStorage and view them later.
+d. Provide an option to remove recipes from the favorites list. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Finder</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black text-white">
+  <div id="recipe-container"
+    class="border border-none rounded-lg p-6 sm:p-8 md:p-10 shadow-2xl shadow-green-500 mx-auto mt-4 font-sans mb-10 text-sm w-full max-w-3xl">
+    <h1 class="text-4xl text-pink-700 font-mono md:text-2xl sm:text-xl">Recipe Finder</h1>
+
+    <!-- Ingredient Form -->
+    <form id="ingredient-form" class="my-4">
+      <label for="ingredients" class="block text-base md:text-sm">Enter Ingredients (comma separated):</label>
+      <div class="flex flex-col sm:flex-row items-start sm:items-center">
+        <input type="text" id="ingredients" name="ingredients"
+          class="w-full sm:w-64 lg:w-80 h-12 rounded-lg bg-violet-100 text-black px-4 mb-4 sm:mb-0">
+        <button type="submit" class="bg-blue-500 p-2 rounded-lg text-white sm:ml-4">Search Recipes</button>
+      </div>
+    </form>
+
+    <!-- Recipe List -->
+    <h2 class="text-2xl text-lime-500 mb-4 md:text-xl sm:text-lg">Recipes</h2>
+    <ul id="recipe-list" class="list-disc pl-5"></ul>
+
+    <!-- Favorite Recipes -->
+    <h2 class="text-2xl text-red-500 mb-4 md:text-xl sm:text-lg">Favorite Recipes</h2>
+    <ul id="favorite-list" class="list-disc pl-5"></ul>
+
+    <!-- Add New Recipe Form -->
+    <h2 class="text-2xl text-green-500 mb-4 md:text-xl sm:text-lg">Add New Recipe</h2>
+    <form id="add-recipe-form" class="space-y-6 mt-8">
+      <div>
+        <label for="recipe-name" class="block text-base md:text-sm">Recipe Name:</label>
+        <input type="text" id="recipe-name" name="recipe-name"
+          class="w-full sm:w-64 lg:w-80 h-12 rounded-lg bg-violet-100 text-black px-4" required>
+      </div>
+
+      <div>
+        <label for="recipe-ingredients" class="block text-base md:text-sm">Ingredients (comma separated):</label>
+        <input type="text" id="recipe-ingredients" name="recipe-ingredients"
+          class="w-full sm:w-64 lg:w-80 h-12 rounded-lg bg-violet-100 text-black px-4" required>
+      </div>
+
+      <div>
+        <label for="preparation-time" class="block text-base md:text-sm">Preparation Time (minutes):</label>
+        <input type="number" id="preparation-time" name="preparation-time"
+          class="w-full sm:w-64 lg:w-80 h-12 rounded-lg bg-violet-100 text-black px-4" required>
+      </div>
+
+      <div>
+        <label for="complexity" class="block text-base md:text-sm">Complexity (1-5):</label>
+        <input type="number" id="complexity" name="complexity" min="1" max="5"
+          class="w-full sm:w-64 lg:w-80 h-12 rounded-lg bg-violet-100 text-black px-4" required>
+      </div>
+
+      <button type="submit" class="bg-blue-500 p-2 rounded-lg text-white">Add Recipe</button>
+    </form>
+  </div>
+
+    <script>
+      const predefinedRecipes = [
+        { name: "Spaghetti Bolognese", ingredients: ["spaghetti", "meat", "tomato sauce"], prepTime: 30, complexity: 2, ratings: [] },
+        { name: "Chicken Salad", ingredients: ["chicken", "lettuce", "tomato", "cucumber"], prepTime: 15, complexity: 1, ratings: [] },
+      ];
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const ingredientForm = document.getElementById('ingredient-form');
+        const recipeList = document.getElementById('recipe-list');
+        const favoriteList = document.getElementById('favorite-list');
+        const addRecipeForm = document.getElementById('add-recipe-form');
+
+        let favoriteRecipes = JSON.parse(localStorage.getItem('favorites')) || [];
+
+        const saveRecipes = () => {
+          localStorage.setItem('recipes', JSON.stringify(recipes));
+        };
+
+        const saveFavorites = () => {
+          localStorage.setItem('favorites', JSON.stringify(favoriteRecipes));
+        };
+
+        const displayRecipes = (recipes) => {
+          recipeList.innerHTML = '';
+          recipes.forEach(recipe => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+          <strong>${recipe.name}</strong><br>
+          Ingredients: ${recipe.ingredients.join(', ')}<br>
+          Prep Time: ${recipe.prepTime} minutes<br>
+          Complexity: ${recipe.complexity}<br>
+          Rating: ${calculateAverageRating(recipe.ratings)}<br>
+          <button onclick="addToFavorites('${recipe.name}')" class="bg-blue-500 w-fit p-2 rounded-lg ml-2 text-white mb-10 mt-8">Add to Favorites</button>
+        `;
+            recipeList.appendChild(li);
+          });
+        };
+
+        const displayFavorites = () => {
+          favoriteList.innerHTML = '';
+          favoriteRecipes.forEach(recipe => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+          <strong>${recipe.name}</strong><br>
+          <button onclick="removeFromFavorites('${recipe.name}')" class="bg-red-500 w-fit p-2 rounded-lg ml-2 text-white mb-10 mt-8">Remove from Favorites</button>
+        `;
+            favoriteList.appendChild(li);
+          });
+        };
+
+        ingredientForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const ingredients = document.getElementById('ingredients').value.split(',').map(ing => ing.trim().toLowerCase());
+          const filteredRecipes = predefinedRecipes.filter(recipe => ingredients.every(ing => recipe.ingredients.includes(ing)));
+          displayRecipes(filteredRecipes);
+        });
+
+        addRecipeForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = document.getElementById('recipe-name').value;
+          const ingredients = document.getElementById('recipe-ingredients').value.split(',').map(ing => ing.trim().toLowerCase());
+          const prepTime = parseInt(document.getElementById('preparation-time').value);
+          const complexity = parseInt(document.getElementById('complexity').value);
+          predefinedRecipes.push({ name, ingredients, prepTime, complexity, ratings: [] });
+          saveRecipes();
+          alert('Recipe added successfully!');
+          document.getElementById('recipe-name').value = '';
+          document.getElementById('recipe-ingredients').value = '';
+          document.getElementById('preparation-time').value = '';
+          document.getElementById('complexity').value = '';
+
+        });
+
+        window.addToFavorites = (name) => {
+          const recipe = predefinedRecipes.find(r => r.name === name);
+          if (!favoriteRecipes.some(r => r.name === name)) {
+            favoriteRecipes.push(recipe);
+            saveFavorites();
+            displayFavorites();
+          }
+        };
+
+        window.removeFromFavorites = (name) => {
+          favoriteRecipes = favoriteRecipes.filter(r => r.name !== name);
+          saveFavorites();
+          displayFavorites();
+        };
+
+        const calculateAverageRating = (ratings) => {
+          if (ratings.length === 0) return "No ratings yet";
+          const sum = ratings.reduce((a, b) => a + b, 0);
+          return (sum / ratings.length).toFixed(2);
+        };
+
+        displayFavorites();
+      });
+
+    </script>
+  </div>
+</body>
+
+</html>

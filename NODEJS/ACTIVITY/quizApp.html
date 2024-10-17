@@ -1,0 +1,147 @@
+<!-- // Dynamic Quiz Application:
+// Create an interactive quiz application that presents multiple-choice questions to the user.
+// a. Store the questions and options in an array of objects.
+// b. Display one question at a time with its possible options as radio buttons.
+// c. Allow the user to navigate between questions and submit their options.
+// d. Display the user's score at the end of the quiz.
+// e. Implement a timer for each question. If the user doesn't answer within the time limit, move to the next question. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizAPP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quizcontainer">
+        <h2>Quiz App</h2>
+        <p id="question"></p>
+        <form id="answer-form"></form>
+        <p id="timer"></p>
+        <button id="pre-button" class="btn"></button>
+        <button id="next-button" class="btn">Next</button>
+        <p id="score"></p>
+    </div>
+    <script>
+        const questions = [
+    { question: "What does HTML stand for?", options: ["Hyperlinks and Text Markup Language", "Hyper Text Markup Language", "Home Tool Markup Language", "Hyper Tech Marking Language"], ans: " Hyper Text Markup Language" },
+    { question: "Capital of Kerala", options: ["Kollam", "Ernakulam", "Idukki", "Trivandrum"], ans: "Trivandrum" },
+    { question: "Who is the current Prime Misinter of India?", options: ["Nehru", "Modi", "Manmohan SIngh", "Adani"], ans: "Modi" },
+    { question: "Which of these is the state animal of Kerala?", options: ["Elephant", "Lion", "Tiger", "Peacock"], ans: "Elephant" },
+    { question: "Which company created the operating system Windows?",}
+];
+
+
+let currentQuestionIndex = 0;
+let score = 0;
+let timer;
+
+const questionElement = document.getElementById('question');
+const answerFormElement = document.getElementById('answer-form');
+const nextButton = document.getElementById('next-button');
+const previousButton =document.getElementById('pre-button')
+const scoreElement = document.getElementById('score');
+const timerElement = document.getElementById('timer');
+
+function startQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    scoreElement.innerText = '';
+    nextButton.innerText = 'Next';
+    previousButton.innerText='Previous';
+    showQuestion();
+}
+
+function showQuestion() {
+    clearInterval(timer);
+    timerElement.innerText = '';
+    answerFormElement.innerHTML = '';
+
+    const currentQuestion = questions[currentQuestionIndex];
+    questionElement.innerText = currentQuestion.question;
+
+    currentQuestion.options.forEach((answer, index) => {
+        const radioWrapper = document.createElement('div');
+        const radioButton = document.createElement('input');
+        radioButton.type = 'radio';
+        radioButton.id = `answer${index}`;
+        radioButton.name = 'answer';
+        radioButton.value = answer;
+        const label = document.createElement('label');
+        label.htmlFor = `answer${index}`;
+        label.innerText = answer;
+        radioWrapper.appendChild(radioButton);
+        radioWrapper.appendChild(label);
+        answerFormElement.appendChild(radioWrapper);
+    });
+    startTimer();
+}
+function checkAnswer() {
+    const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+    if (selectedAnswer && selectedAnswer.value === questions[currentQuestionIndex].ans) {
+        score++;
+    }
+}
+function showScore() {
+    questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`
+    nextButton.innerText = 'Restart';
+
+    
+}
+
+function handleNextButton() {
+    checkAnswer();
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        showQuestion();
+    } else {
+       
+        showScore();
+    }
+}
+function handlePreviousButton() {
+    checkAnswer();
+    currentQuestionIndex--;
+    if (currentQuestionIndex  >=0) {
+        showQuestion();
+    } else {
+       
+        showScore();
+    }
+}
+
+function startTimer() {
+    let timeLeft = 10;
+    timerElement.innerText = `Time left: ${timeLeft}s`;
+    timer = setInterval(() => {
+        timeLeft--;
+        timerElement.innerText = `Time left: ${timeLeft}s`;
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            handleNextButton(); 
+        }
+    }, 1000);
+}
+
+nextButton.addEventListener('click', () => {
+    if (currentQuestionIndex < questions.length) {
+        handleNextButton();
+    } else {
+        startQuiz();
+    }
+});
+previousButton.addEventListener('click', () => {
+    if (currentQuestionIndex < questions.length) {
+        handlePreviousButton();
+    } else {
+        startQuiz();
+    }
+});
+
+// showQuestion();
+startQuiz();
+    </script>
+</body> 
+</html>
