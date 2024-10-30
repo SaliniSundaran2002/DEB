@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        .calcu-container {
+            margin: auto;
+            border: 2px solid;
+            width: 380px;
+            height: 740px;
+            border-radius: 20px;
+            background-color: rgb(26, 21, 21);
+        }
+
+        .display-container {
+            margin: 20px;
+            text-align: right;
+        }
+
+        .display-container p {
+            width: 94%;
+            height: 80px;
+            padding: 10px;
+            background-color: rgb(83, 83, 83);
+            color: white;
+            font-size: xx-large;
+            margin: 0;
+            padding-top: 25px;
+            margin-top: 50px;
+        }
+
+        .btns {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 80px);
+            gap: 10px;
+            border: none;
+            border-style: none;
+        }
+
+        button {
+            padding: 13px;
+            width: 70px;
+            height: 70px;
+            margin: 20px 0px 0px 0px;
+            border-radius: 50%;
+            background-color: rgb(29, 27, 27);
+            color: white;
+            font-size: 25px;
+            border-style: none;
+            cursor: pointer;
+        }
+
+        .functions {
+            background-color: orange;
+            color: white;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>CALCULATOR</h2>
+    <div class="calcu-container">
+        <div class="display-container">
+            <p id="display"></p>
+        </div>
+        <div class="btns">
+            <button class="functions" onclick="clearDisplay()">AC</button>
+            <button class="functions" onclick="deleteDisplay()">DEL</button>
+            <button class="functions" onclick="appendDisplay('%')">%</button>
+            <button class="functions" onclick="appendDisplay('/')">/</button>
+            <button onclick="appendDisplay('7')">7</button>
+            <button onclick="appendDisplay('8')">8</button>
+            <button onclick="appendDisplay('9')">9</button>
+            <button class="functions" onclick="appendDisplay('*')">*</button>
+            <button onclick="appendDisplay('4')">4</button>
+            <button onclick="appendDisplay('5')">5</button>
+            <button onclick="appendDisplay('6')">6</button>
+            <button class="functions" onclick="appendDisplay('-')">-</button>
+            <button onclick="appendDisplay('1')">1</button>
+            <button onclick="appendDisplay('2')">2</button>
+            <button onclick="appendDisplay('3')">3</button>
+            <button class="functions" onclick="appendDisplay('+')">+</button>
+            <button class="functions" onclick="appendDisplay('0')">0</button>
+            <button class="functions" onclick="appendDisplay('00')">00</button>
+            <button class="functions" onclick="appendDisplay('.')">.</button>
+            <button class="functions" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+
+    <script>
+        function appendDisplay(value) {
+            document.getElementById('display').innerText += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').innerText = "";
+        }
+
+        function deleteDisplay() {
+            let display = document.getElementById('display').innerText;
+            document.getElementById('display').innerText = display.slice(0, -1);
+        }
+
+        function calculateResult() {
+            let display = document.getElementById('display').innerText;
+            try {
+                let result = eval(display);
+                document.getElementById('display').innerText = result;
+            } catch (error) {
+                document.getElementById('display').innerText = 'Error';
+            }
+        }
+    </script>
+</body>
+
+</html>

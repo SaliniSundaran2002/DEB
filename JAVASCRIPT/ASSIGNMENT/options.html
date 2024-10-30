@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label for="">Name : </label>
+        <input type="text" id="name"><br>
+        <label for="">Address : </label>
+        <textarea id="address" cols="20" rows="5"></textarea><br>
+        <label for="">Degree : </label>
+        <input type="radio" name="rad" id="">Btech
+        <input type="radio" name="rad" id="">Mtech
+        <input type="radio" name="rad" id="">MCA
+        <input type="radio" name="rad" id="" onclick="others()">Others
+        <p id="show"></p>
+    </div>
+
+    <script>
+        function others() {
+            let opt = document.createElement("select")
+            let bca = document.createElement("option")
+            bca.innerHTML = 'BCA'
+            opt.appendChild(bca)
+            let pgdca = document.createElement("option")
+            pgdca.innerHTML = 'PGDCA'
+            opt.appendChild(pgdca)
+            let bcom = document.createElement("option")
+            bcom.innerHTML = 'BCom'
+            opt.appendChild(bcom)
+            let mphil = document.createElement("option")
+            mphil.innerHTML = 'MPhil'
+            opt.appendChild(mphil)
+            document.getElementById('show').appendChild(opt)
+            
+        }
+    </script>
+</body>
+
+</html>

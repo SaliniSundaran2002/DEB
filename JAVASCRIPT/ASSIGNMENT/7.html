@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <input type="text" id="input" />
+    <button onclick="printArray()">Submit</button>
+    <p id="show"></p>
+    <p id="selectedValue"></p>
+    <p id="sortedArray"></p>
+    <p id="reversedArray"></p>
+    <script>
+      let array = [];
+
+      function printArray() {
+        let inp = document.getElementById("input").value;
+        if (inp) {
+          array.push(inp);
+          console.log(array);
+
+          // Clear previous select element
+          document.getElementById("show").innerHTML = "";
+
+          const selectInput = document.createElement("select");
+
+          // Populate the select options
+          for (let i = 0; i < array.length; i++) {
+            const option = document.createElement("option");
+            option.value = i; // Set option value as the index
+            option.text = i + 1; // Set option text as the actual array value
+            selectInput.appendChild(option);
+          }
+
+          // Append the updated select element
+          document.getElementById("show").appendChild(selectInput);
+
+          // Add event listener to display the selected value
+          selectInput.addEventListener("change", function () {
+            const selectedIndex = this.value;
+            document.getElementById(
+              "selectedValue"
+            ).textContent = `Selected value: ${array[selectedIndex]}`;
+          });
+
+          //   console.log("Sorted Array : ",array.sort())
+          // Clear the input field
+          document.getElementById("input").value = "";
+          document.getElementById("sortedArray").textContent =
+            "Sorted Array is : " + array.sort();
+            document.getElementById("reversedArray").textContent = "Reversed Array is : " + array.reverse();
+        }
+      }
+    </script>
+  </body>
+</html>

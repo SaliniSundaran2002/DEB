@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of Rectangle</title>
+</head>
+<body>
+    <div>
+    <input type="number" id="fNumber">
+    <input type="number" id="sNumber">
+    <button onclick="area()">Area of Rectangle</button>
+    <p id="display"></p>
+    </div>
+
+    <script>
+        function area(){
+            let fNumber = document.getElementById('fNumber')
+            let sNumber = document.getElementById('sNumber')
+            let Area = fNumber.value * sNumber.value
+            document.getElementById('display').textContent = "Area of Rectangle = " + Area
+        }
+    </script>
+</body>
+</html>

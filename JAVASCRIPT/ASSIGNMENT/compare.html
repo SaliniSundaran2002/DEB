@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare</title>
+</head>
+
+<body>
+    <input type="number" id="firstNumber" placeholder="First Number">
+    <input type="number" id="secondNumber" placeholder="Second Number">
+    <button onclick="comapre()">Compare</button>
+    <p id="display"></p>
+
+    <script>
+        function comapre() {
+            let fno = document.getElementById('firstNumber')
+            let sno = document.getElementById('secondNumber')
+            if(fno.value === sno.value){
+                document.getElementById('display').textContent = "Same Number"
+            } else{
+                document.getElementById('display').textContent = "Different Number"
+            }
+
+            fno.value= ''
+            sno.value = ''
+        }
+    </script>
+</body>
+
+</html>

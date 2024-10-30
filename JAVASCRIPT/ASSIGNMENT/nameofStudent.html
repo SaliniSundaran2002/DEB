@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display the name of student</title>
+</head>
+<body>
+    <input type="text" name="" id="inp">
+    <button onclick="displayName()">Submit</button>
+    <p id="show"></p>
+    <p id="selectedValue"></p>
+    <p id="selectValue"></p>
+
+    <script>
+        let array = []
+        function displayName(){
+            let input = document.getElementById("inp").value;
+            array.push(input)
+            document.getElementById("show").textContent = "Entered Array is : " + array
+            let selectInput = document.createElement("select")
+            document.getElementById("selectedValue").innerHTML = ""
+
+            for(let i=0;i<array.length;i++){
+                let optionInput = document.createElement("option")
+                optionInput.value = i;
+                optionInput.text = i+1
+                selectInput.appendChild(optionInput)
+            }
+            document.getElementById("selectedValue").appendChild(selectInput)
+
+            selectInput.addEventListener("change",function(){
+                let selectedIndex = this.value
+                document.getElementById("selectValue").textContent = `Enter Roll Number : ${array[selectedIndex]}`
+            })
+
+            document.getElementById("inp").value=""
+        }
+    </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 import express, { json } from "express";
-import { adminRoute } from "./Routers/adminRoute.js";
+import { adminRoute } from "./Routes/adminRout.js";
 import dotenv from "dotenv"
 dotenv.config()
 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of Square</title>
+    <style>
+        .container{
+            margin: auto;
+            margin-top: 30px;
+            display: grid;
+            padding: 30px;
+            background-color: rgb(202, 228, 252);
+            width: 40%;
+            /* border-radius: 30px 0px 0px 30px; */
+            /* box-shadow: red 0px 0px 10px 0px; */
+
+        }
+        input{
+            width: 100%;
+            height: 40px;
+            border-radius: 10px;
+            border-color: red;
+            box-shadow: red 0px 0px 10px 0px;
+        }
+        button{
+            width: 40%;
+            height: 45px;
+            background-color: rgb(161, 0, 0);
+            color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-style: none;
+            box-shadow: red 0px 0px 10px 0px;
+        }
+
+        h2, p{
+            color: rgb(138, 0, 0);
+            text-align: center;
+            /* text-shadow:red; */
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Area of Square</h2>
+    <input type="number" id="inp">
+    <button onclick="area()">Area of Square</button>
+    <p id="display"></p>
+    </div>
+
+    <script>
+        function area(){
+            let Inpvalue = document.getElementById('inp');
+            let area = Inpvalue.value **2
+            document.getElementById('display').textContent = "Area = " + area
+            Inpvalue.value = ''
+        }
+        
+    </script>
+</body>
+</html>

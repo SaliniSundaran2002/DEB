@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of Circle</title>
+</head>
+<body>
+    <div>
+        <input type="number" id="radius">
+        <button onclick="area()">Area of Circle</button>
+        <p id="display"></p>
+    </div>
+
+    <script>
+        function area(){
+            const pi = 3.14
+            let radius = document.getElementById('radius')
+            let area = pi*radius.value*radius.value
+            document.getElementById('display').textContent = `Area of circle with radius ${radius.value} = ` + area
+            radius.value = ''
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largest Element in an array</title>
+</head>
+<body>
+    <input type="number" id="number" required>
+    <button onclick="add()">Submit</button>
+    <button onclick="maximum()">Maximum</button>
+    <p id="display"></p>
+
+    <script>
+        let array = []
+        function add(){
+            let no = document.getElementById('number')
+            array.push(Number(no.value))
+            no.value = ''
+
+            console.log("Array : ",array)  
+        }
+
+        function maximum(){
+            if(array.length>0){
+                const maximuM = Math.max(...array)
+                console.log("Max: ",maximuM);
+                
+            } else{
+                console.log("Array not exist");
+                
+            }
+        }
+
+    </script>
+</body>
+</html>

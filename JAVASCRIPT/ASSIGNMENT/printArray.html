@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+
+<body>
+    <h2>Array</h2>
+    <input type="text" id="inp">
+    <button onclick="printArray()">Print</button>
+    <p id="display"></p>
+
+    <script>
+        let arr = []
+        function printArray() {
+            let Inpvalue = document.getElementById('inp').value
+            arr.push(Inpvalue)
+            // console.log(arr);
+            document.getElementById('inp').value = ''
+
+            document.getElementById("display").innerHTML ="Enterd array is : " + arr
+        }
+
+    </script>
+</body>
+
+</html>
