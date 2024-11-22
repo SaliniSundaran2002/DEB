@@ -73,80 +73,97 @@ adminRoute.post('/login', async (req, res) => {
 
 const certificate = new Map()
 
-adminRoute.post('/issuecertificate',authenticate, (req, res) => {
-    try{
+adminRoute.post('/issuecertificate', authenticate, (req, res) => {
+    try {
         // console.log(req.role);
-        
-    if(req.role == 'admin'){
-        const {selectedCourse,certiId,candidateName,selectGrade,issueDate} = req.body
 
-            certificate.set(certiId,{selectedCourse,candidateName,selectGrade,issueDate})
-        console.log("IssueCertificate : ",certificate);
-        res.status(200).json({message : "Certificate issued!"})
-        
-        
-    } else{
-        res.status(400).json({message : "You are not an admin!"})
-        
-    }
-}catch(error){
-    res.status(400).json({message : "Error"})
-}
-    
-})
+        if (req.role == 'admin') {
+            const { selectedCourse, certiId, candidateName, selectGrade, issueDate } = req.body
+
+            certificate.set(certiId, { selectedCourse, candidateName, selectGrade, issueDate })
+            console.log("IssueCertificate : ", certificate);
+            res.status(200).json({ message: "Certificate issued!" })
 
 
-adminRoute.get('/getcourse/:id',(req,res)=>{
-const searchTerm = req.params.id 
-const result=[]
-    try{
-if(searchTerm){
-    for(const[id,item] of certificate){
-        if(id==searchTerm|| item.selectedCourse.includes(searchTerm) || item.candidateName.includes(searchTerm) || item.selectGrade.includes(searchTerm) || item.issueDate.includes(searchTerm))
-        {
-            result.push({id, ...item})
-            console.log("Certificate Detailes : ",result);
-            res.status(200).json({ message: "Search term found" })
-            
-        } else{
-            console.log("No search term found");
-    res.status(400).json({ message: "No search term found" })
+        } else {
+            res.status(400).json({ message: "You are not an admin!" })
+
         }
-    }
-}
-
-    } catch(error){
-        res.status(400).json({message:"Error"})
+    } catch (error) {
+        res.status(400).json({ message: "Error" })
     }
 
 })
 
 
+// adminRoute.get('/getcourse/:id', authenticate, (req, res) => {
+//     const searchTerm = req.params.id
+//     const result = []
+//     try {
+//         if (searchTerm) {
+//             for (const [id, item] of certificate) {
+//                 if (id == searchTerm || item.selectedCourse.includes(searchTerm) || item.candidateName.includes(searchTerm) || item.selectGrade.includes(searchTerm) || item.issueDate.includes(searchTerm)) {
+//                     result.push({ id, ...item })
+//                     console.log("Certificate Detailes : ", result);
+//                     res.status(200).json({ message: "Search term found" })
+
+//                 } else {
+//                     console.log("No search term found");
+//                     res.status(400).json({ message: "No search term found" })
+//                 }
+//             }
+//         }
+
+//     } catch (error) {
+//         res.status(400).json({ message: "Error" })
+//     }
+
+// })
 
 
-adminRoute.get('/getcourse',(req,res)=>{
-    try{
-   const search= req.query.courseName; 
-   console.log(search);
-        const result = course.get(search)
-        if (result) {
 
-            res.send(result);
+
+adminRoute.get('/getcourse/:id', (req, res) => {
+    try {
+        const search = req.params.id;
+        console.log(search);
+        // const result = course.get(search)
+        if (certificate.has(search)) {
+            // const result = certificate.get(search)
+            const item = certificate.get(search)
+            return res.status(200).json({
+                message:search,
+                certi:item
+            })
+            // res.send(result);
         }
         else {
-            res.status(404).json({ message: "No course found,Check the name" })
+            res.status(404).json({ message: "No course found,Check the id" })
         }
     }
     catch (error) {
         res.status(400).json({ message: "Check the input" })
     }
- })
+})
+
+
+adminRoute.get('/viewuser', authenticate, async (req, res) => {
+    // console.log("hi",req.role);
+
+    try {
+        const user = req.role
+        res.status(200).json({ user })
+    } catch (error) {
+        console.log(error);
+
+    }
+})
 
 
 // adminRoute.delete('/logout',(req,res)=>{
-    
+
 //     res.status(200).json({message : "Logout"})
 //     console.log("Successfully logout!");
-    
+
 // })
 export { adminRoute }

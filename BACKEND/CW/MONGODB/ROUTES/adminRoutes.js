@@ -196,42 +196,40 @@ adminRoute.get('/getcourse', (req, res) => {
 
 
 
-adminRoute.put('/updatecourse', authenticate, (req, res) => {
+adminRoute.patch('/updateCourse', authenticate, async (req, res) => {
+    const user = req.role;
+    const { courseName, courseId, courseType, description, price } = req.body;
+
     try {
-
-        if (req.role == 'admin') {
-            const { courseId, courseName, courseType, description, price } = req.body
-            if (course.has(courseId)) {
-                const existingCourse = course.get(courseId)
-                console.log("Existing code : ", existingCourse);
-
-                const updatecourse = {
-                    courseName: courseName || existingCourse.courseName,
-                    courseType: courseType || existingCourse.courseType,
-                    description: description || existingCourse.description,
-                    price: price || existingCourse.price
+        // Check if user has admin privileges
+        if (user === "admin") {
+            // Find the course by CourseName and update its details
+            const result = await course.updateOne(
+                { Courseid: courseId },
+                {
+                    $set: {
+                        Coursename: courseName,
+                        Coursetype: courseType,
+                        Description: description,
+                        Price: parseInt(price)
+                    }
                 }
-                course.set(courseId, updatecourse)
-                console.log("Updated Course : ", updatecourse);
-                res.status(200).json({ message: "Course updated successfully" })
+            );
 
-
-            } else {
-                console.log("Course not found for id : ", courseId);
-                res.status(404).json({ message: "Course not found " })
-
+            // Check if a course was found and updated
+            if (result.matchedCount === 0) {
+                return res.status(400).json({ message: "No such course" });
             }
 
+            res.status(201).json({ message: "Course Details Updated" });
         } else {
-            console.log("Only admin can update courses.");
-            res.status(404).json({ message: "Access denied: only for admins can update courses" })
+            res.status(400).json({ message: "Unauthorized Access" });
         }
     } catch (error) {
-        console.log("Error");
-        res.status(500).json({ message: "Error..." })
-
+        // Error handling for any unexpected issues
+        res.status(400).json({ message: "Check the Course Details" });
     }
-})
+});
 
 
 
